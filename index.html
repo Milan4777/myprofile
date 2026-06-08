@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Milan Shammi — Portfolio</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container header-grid">
+        <div class="hero">
+          <h1 class="name">Milan Shammi</h1>
+          <p class="tagline">[Your tagline — e.g. "Computer Science Student & Builder"]</p>
+          <p class="bio">I am a computer science engineering student at TOC H</p>
+          <div class="actions">
+            <a class="btn" href="#projects">See projects</a>
+            <a class="btn ghost" href="#contact">Contact</a>
+          </div>
+        </div>
+        <div class="photo">
+          <img src="assets/profile.jpg" alt="Profile photo (replace assets/profile.jpg)" />
+        </div>
+      </div>
+    </header>
+
+    <main class="container">
+      <section id="about">
+        <h2>About</h2>
+        <p>More about you goes here — hobbies, interests, current focus, and what you're looking for.</p>
+      </section>
+
+      <section id="skills">
+        <h2>Skills</h2>
+        <p>[Add your skills as a comma-separated list]</p>
+      </section>
+
+      <section id="projects">
+        <h2>Projects</h2>
+        <div class="projects-grid">
+          <article class="project-card">
+            <h3>Project Title</h3>
+            <p>Short description. Add live/repo links when ready.</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="contact">
+        <h2>Contact</h2>
+        <p>Email: [your-email@example.com]</p>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <p>&copy; <span id="year"></span> Milan Shammi — Built with HTML & CSS.</p>
+        <p class="socials">[Add social links in the HTML]</p>
+      </div>
+    </footer>
+
+    <script>
+      document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+  </body>
+</html>
