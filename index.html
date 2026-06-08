@@ -1,65 +1,181 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Milan Shammi — Portfolio</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Your Portfolio</title>
+    <meta
+      name="description"
+      content="A simple personal portfolio website template you can fill with your own details."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <header class="site-header">
-      <div class="container header-grid">
-        <div class="hero">
-          <h1 class="name">Milan Shammi</h1>
-          <p class="tagline">[Your tagline — e.g. "Computer Science Student & Builder"]</p>
-          <p class="bio">I am a computer science engineering student at TOC H</p>
-          <div class="actions">
-            <a class="btn" href="#projects">See projects</a>
-            <a class="btn ghost" href="#contact">Contact</a>
-          </div>
+    <div class="live-bg"></div>
+    <header class="hero">
+      <nav class="nav container">
+        <a class="brand" href="#top">Derin</a>
+        <a class="nav-link" href="#contact">Contact</a>
+      </nav>
+
+      <section class="container hero-grid" id="top">
+        <div class="hero-copy tilt-text">
+          <p class="eyebrow">Personal Portfolio</p>
+          <h1>Hi, I’m <span>Derin</span>.</h1>
+          <p class="lead">
+            Add your role, skills, and personality here. This template is ready for
+            your real details.
+          </p>
+          <a class="button" href="#contact">Tell me your details</a>
         </div>
-        <div class="photo">
-          <img src="assets/profile.jpg" alt="Profile photo (replace assets/profile.jpg)" />
-        </div>
-      </div>
+
+        <aside class="card highlight-card tilt-card">
+          <h2>What I need from you</h2>
+          <ul>
+            <li>Your full name</li>
+            <li>Your role or tagline</li>
+            <li>A short bio</li>
+            <li>Top skills</li>
+            <li>3 project examples</li>
+            <li>Contact details</li>
+          </ul>
+        </aside>
+      </section>
     </header>
 
     <main class="container">
-      <section id="about">
-        <h2>About</h2>
-        <p>More about you goes here — hobbies, interests, current focus, and what you're looking for.</p>
+      <section class="section-grid">
+        <article class="card tilt-card">
+          <h2>About Me</h2>
+          <p>
+            Write a short introduction about who you are, what you do, and what kind
+            of work you enjoy. This is the first thing visitors should know about you.
+          </p>
+          <p class="muted">
+            You can add your background, interests, and what makes your approach unique.
+            This section is a great place to show personality and build trust quickly.
+          </p>
+        </article>
+
+        <article class="card tilt-card">
+          <h2>Skills</h2>
+          <div class="chip-list">
+            <span>HTML</span>
+            <span>CSS</span>
+            <span>JavaScript</span>
+            <span>React</span>
+            <span>Design</span>
+            <span>Problem Solving</span>
+          </div>
+          <p class="muted">Replace these with your actual skills.</p>
+        </article>
       </section>
 
-      <section id="skills">
-        <h2>Skills</h2>
-        <p>[Add your skills as a comma-separated list]</p>
-      </section>
-
-      <section id="projects">
+      <section class="card tilt-card">
         <h2>Projects</h2>
-        <div class="projects-grid">
+        <p class="muted">
+          Highlight your strongest work here. Add what problem you solved, the tools you used,
+          and the result or value you delivered.
+        </p>
+        <div class="project-grid">
           <article class="project-card">
-            <h3>Project Title</h3>
-            <p>Short description. Add live/repo links when ready.</p>
+            <h3>Project One</h3>
+            <p>Describe your first project, what you built, and the impact it had.</p>
+          </article>
+          <article class="project-card">
+            <h3>Project Two</h3>
+            <p>Describe your second project, the tools you used, and what you learned.</p>
+          </article>
+          <article class="project-card">
+            <h3>Project Three</h3>
+            <p>Describe your third project or any internship, freelance work, or academic work.</p>
           </article>
         </div>
       </section>
 
-      <section id="contact">
-        <h2>Contact</h2>
-        <p>Email: [your-email@example.com]</p>
+      <section class="card tilt-card" id="contact">
+        <h2>Fill in Your Details</h2>
+        <p class="muted">
+          Send me these details and I will update the site for you. This section is your
+          quick checklist for turning the template into a real personal brand.
+        </p>
+        <ul class="prompt-list">
+          <li>Full name</li>
+          <li>Title or tagline</li>
+          <li>Short personal bio</li>
+          <li>Top 5–10 skills</li>
+          <li>3 project names and short descriptions</li>
+          <li>Email, LinkedIn, GitHub, or phone number</li>
+        </ul>
       </section>
     </main>
 
-    <footer class="site-footer">
-      <div class="container">
-        <p>&copy; <span id="year"></span> Milan Shammi — Built with HTML & CSS.</p>
-        <p class="socials">[Add social links in the HTML]</p>
-      </div>
-    </footer>
-
     <script>
-      document.getElementById('year').textContent = new Date().getFullYear();
+      const heroGrid = document.querySelector('.hero-grid');
+      const heroCopy = document.querySelector('.hero-copy');
+      const liveBg = document.querySelector('.live-bg');
+      const tiltCards = document.querySelectorAll('.tilt-card');
+      let mouseX = 0;
+      let mouseY = 0;
+      let targetX = 0;
+      let targetY = 0;
+      let bgX = 0;
+      let bgY = 0;
+      let bgTargetX = 0;
+      let bgTargetY = 0;
+
+      function animate() {
+        mouseX += (targetX - mouseX) * 0.06;
+        mouseY += (targetY - mouseY) * 0.06;
+        bgX += (bgTargetX - bgX) * 0.08;
+        bgY += (bgTargetY - bgY) * 0.08;
+
+        if (heroGrid) heroGrid.style.transform = `translate(${mouseX * 0.08}px, ${mouseY * 0.08}px)`;
+        if (heroCopy) heroCopy.style.transform = `translate(${mouseX * 0.12}px, ${mouseY * 0.12}px)`;
+        if (liveBg) {
+          liveBg.style.setProperty('--bg-x', `${bgX}px`);
+          liveBg.style.setProperty('--bg-y', `${bgY}px`);
+        }
+
+        tiltCards.forEach((card) => {
+          const rect = card.getBoundingClientRect();
+          const px = (targetX - (rect.left + rect.width / 2) / window.innerWidth) * 1.6;
+          const py = (targetY - (rect.top + rect.height / 2) / window.innerHeight) * 1.6;
+          card.style.transform = `perspective(900px) rotateX(${(-py * 2.5).toFixed(2)}deg) rotateY(${(px * 3.2).toFixed(2)}deg) translateY(-1px)`;
+        });
+
+        requestAnimationFrame(animate);
+      }
+
+      document.addEventListener('mousemove', (e) => {
+        targetX = (e.clientX / window.innerWidth - 0.5) * 2;
+        targetY = (e.clientY / window.innerHeight - 0.5) * 2;
+
+        bgTargetX = (e.clientX / window.innerWidth - 0.5) * 70;
+        bgTargetY = (e.clientY / window.innerHeight - 0.5) * 70;
+      });
+
+      document.addEventListener('mouseleave', () => {
+        targetX = 0;
+        targetY = 0;
+        bgX = 0;
+        bgY = 0;
+        tiltCards.forEach((card) => (card.style.transform = ''));
+        if (heroGrid) heroGrid.style.transform = '';
+        if (heroCopy) heroCopy.style.transform = '';
+        if (liveBg) {
+          liveBg.style.setProperty('--bg-x', '0px');
+          liveBg.style.setProperty('--bg-y', '0px');
+        }
+      });
+
+      animate();
     </script>
   </body>
 </html>
